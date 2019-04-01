@@ -6,11 +6,10 @@
         <artifactId>logbook</artifactId>
         <groupId>com.backend</groupId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
-
-
     <artifactId>rest</artifactId>
 
     <dependencies>
@@ -39,6 +38,17 @@
             <scope>runtime</scope>
         </dependency>
     </dependencies>
-
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.rest.Application</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
