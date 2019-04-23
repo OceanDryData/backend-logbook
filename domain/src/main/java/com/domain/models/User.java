@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 @Setter
 public class User extends ResourceSupport implements Serializable {
     @Id
