@@ -1,15 +1,14 @@
 package com.domain.interfaces;
 
-import java.util.List;
-
 public interface ICRUD<T, R> {
 
-    R create(T entity);
+    T create(T entity);
 
-    T read(long id);
-    Iterable readAll();
+    T read(R id);
 
-    R update(T entity);
+    Iterable<T> readAll();
 
-    void delete(long id);
+    T update(T entity);
+
+    boolean delete(R id);
 }
