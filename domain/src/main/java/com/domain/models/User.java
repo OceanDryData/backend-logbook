@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 @Setter
 public class User extends ResourceSupport implements Serializable {
     @Id
@@ -16,22 +16,22 @@ public class User extends ResourceSupport implements Serializable {
     @Column(name = "id", updatable = false, nullable = false)
     private Long Id;
     @Getter
-    private String FirstName;
-    @Getter
-    private String LastName;
-    @Getter
     private String Email;
     @Getter
     private String Password;
+    @Getter
+    private String FirstName;
+    @Getter
+    private String LastName;
 
     public User() {
     }
 
-    public User(String firstName, String lastName, String email, String password) {
-        FirstName = firstName;
-        LastName = lastName;
+    public User(String email, String password, String firstName, String lastName) {
         Email = email;
         Password = password;
+        FirstName = firstName;
+        LastName = lastName;
 
     }
 
