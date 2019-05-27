@@ -3,10 +3,13 @@ package com.persistence.services;
 import com.domain.models.Boat;
 import com.domain.interfaces.ICRUD;
 import com.domain.models.Boat;
+import com.domain.models.User;
 import com.persistence.repositories.IBoatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class BoatService implements ICRUD<Boat, Long> {
@@ -44,4 +47,5 @@ public class BoatService implements ICRUD<Boat, Long> {
         repository.deleteById(id);
         return true;
     }
+    public List<Boat> readByUser(User user){ return null;}
 }
