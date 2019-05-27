@@ -25,6 +25,7 @@ public class Boat extends ResourceSupport {
     public Boat() {
     }
 
+
     public Boat(String name, String harbor, String brand, Double ft) {
         this.name = name;
         this.harbor = harbor;
