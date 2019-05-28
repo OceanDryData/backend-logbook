@@ -7,7 +7,7 @@ package com.domain.interfaces.rest.controllers;
         import org.springframework.web.bind.annotation.RequestMethod;
         import com.domain.models.User;
 
-public abstract interface IBoatController extends IRestCRUD<Boat, Long> {
+public interface IBoatController extends IRestCRUD<Boat, Long> {
     @RequestMapping(value = "/byUser", method = RequestMethod.GET)
     ResponseEntity readByUser(String user);
 }

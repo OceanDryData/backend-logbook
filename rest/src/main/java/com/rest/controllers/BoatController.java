@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins = {"http://localhost:4200","*"})
+@CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
 @RequestMapping("/boats")
-public abstract class BoatController implements IBoatController {
+public class BoatController implements IBoatController {
 
     private BoatHandler handler;
 
@@ -35,14 +35,19 @@ public abstract class BoatController implements IBoatController {
         this.handler = handler;
     }
 
+
+    @Override
     @RequestMapping(value = "/",method = RequestMethod.POST)
-    public ResponseEntity create(@RequestBody Boat JsonEntity) {
-        System.out.println("HALLO");
-        System.out.println(JsonEntity);
-        Boat result = handler.create(JsonEntity);
-//        Boat result = handler.create(gson.fromJson(JsonEntity, Project.class));
+    public ResponseEntity create(@RequestBody String JsonEntity) {
+        Boat boat = gson.fromJson(JsonEntity, Boat.class);
+            Boat result = handler.create(boat);
         return new ResponseEntity<>(result,HttpStatus.valueOf(200));
     }
+//
+//    @Override
+//    public ResponseEntity create(String JsonEntity) {
+//        return null;
+//    }
 
     @Override
     public ResponseEntity read(Long id) {
@@ -81,9 +86,9 @@ public abstract class BoatController implements IBoatController {
         }
     }
 
-//    @Override
-//    public ResponseEntity readByUser(String jsonUser) {
-//        User user = gson.fromJson(jsonUser, User.class);
-//        return new ResponseEntity<>(handler.readByUser(user), HttpStatus.valueOf(200));
-//    }
+    @Override
+    public ResponseEntity readByUser(String user) {
+        return null;
+    }
+    
 }
