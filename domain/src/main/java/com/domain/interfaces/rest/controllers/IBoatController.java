@@ -8,6 +8,6 @@ package com.domain.interfaces.rest.controllers;
         import com.domain.models.User;
 
 public interface IBoatController extends IRestCRUD<Boat, Long> {
-    @RequestMapping(value = "/byUser", method = RequestMethod.GET)
+    @RequestMapping(value = "/byUser", method = RequestMethod.GET,consumes = "application/json")
     ResponseEntity readByUser(String user);
 }
