@@ -19,7 +19,7 @@ public class Log extends ResourceSupport implements Serializable {
     @Getter
     private String title;
     @Getter
-    private Integer date;
+    private String date;
     @Getter
     private Integer distance;
     @Getter
@@ -30,7 +30,7 @@ public class Log extends ResourceSupport implements Serializable {
     public Log(){
     }
 
-    public Log(String title, Integer date, Integer distance, String fromharbor, String toharbor) {
+    public Log(String title, String date, Integer distance, String fromharbor, String toharbor) {
         this.title = title;
         this.date = date;
         this.distance = distance;
