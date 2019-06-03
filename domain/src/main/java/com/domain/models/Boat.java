@@ -5,6 +5,7 @@ import org.springframework.hateoas.Link;
 import org.springframework.hateoas.ResourceSupport;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "boat")
@@ -20,13 +21,13 @@ public class Boat extends ResourceSupport {
     @Getter
     private String brand;
     @Getter
-    private Double ft;
+    private Integer ft;
 
     public Boat() {
     }
 
 
-    public Boat(String name, String harbor, String brand, Double ft) {
+    public Boat(String name, String harbor, String brand, Integer ft) {
         this.name = name;
         this.harbor = harbor;
         this.brand = brand;

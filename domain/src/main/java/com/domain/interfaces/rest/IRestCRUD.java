@@ -11,7 +11,7 @@ import javax.websocket.server.PathParam;
 
 public interface IRestCRUD<T, R> {
 
-    @RequestMapping(value = "/",method = RequestMethod.POST)
+
     ResponseEntity create(String JsonEntity);
 
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)

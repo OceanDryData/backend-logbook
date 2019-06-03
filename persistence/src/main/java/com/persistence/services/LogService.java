@@ -1,10 +1,9 @@
 package com.persistence.services;
 
-import com.domain.models.Boat;
+import com.domain.models.Log;
 import com.domain.interfaces.ICRUD;
-import com.domain.models.Boat;
 import com.domain.models.User;
-import com.persistence.repositories.IBoatRepository;
+import com.persistence.repositories.ILogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -12,20 +11,20 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class BoatService implements ICRUD<Boat, Long> {
+public class LogService implements ICRUD<Log, Long> {
 
-    @Qualifier("BoatRepository")
+    @Qualifier("LogRepository")
     @Autowired
-    private IBoatRepository repository;
+    private ILogRepository repository;
 
 
     @Override
-    public Boat create(Boat entity) {
+    public Log create(Log entity) {
         return repository.save(entity);
     }
 
     @Override
-    public Boat read(Long id) {
+    public Log read(Long id) {
         if (repository.findById(id).isPresent())
             return repository.findById(id).get();
         else
@@ -33,12 +32,12 @@ public class BoatService implements ICRUD<Boat, Long> {
     }
 
     @Override
-    public Iterable<Boat> readAll() {
+    public Iterable<Log> readAll() {
         return repository.findAll();
     }
 
     @Override
-    public Boat update(Boat entity) {
+    public Log update(Log entity) {
         return repository.save(entity);
     }
 
@@ -47,5 +46,5 @@ public class BoatService implements ICRUD<Boat, Long> {
         repository.deleteById(id);
         return true;
     }
-    public List<Boat> readByUser(User user){ return null;}
+    public List<Log> readByUser(User user){ return null;}
 }
