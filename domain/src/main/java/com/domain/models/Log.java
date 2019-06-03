@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.text.DateFormat;
 
 @Entity
-@Table(name = "Log")
+@Table(name = "log")
 @Setter
 public class Log extends ResourceSupport implements Serializable {
     @Id
@@ -17,24 +17,24 @@ public class Log extends ResourceSupport implements Serializable {
     @Column(name = "id", updatable = false, nullable = false)
     private Long Id;
     @Getter
-    private String Title;
+    private String title;
     @Getter
-    private DateFormat Date;
+    private Integer date;
     @Getter
-    private Double Distance;
+    private Integer distance;
     @Getter
-    private String Marina;
+    private String fromharbor;
     @Getter
-    private String Destination;
+    private String toharbor;
 
     public Log(){
     }
 
-    public Log(String title, DateFormat date, Double distance, String marina, String destination) {
-        Title = title;
-        Date = date;
-        Distance = distance;
-        Marina = marina;
-        Destination = destination;
+    public Log(String title, Integer date, Integer distance, String fromharbor, String toharbor) {
+        this.title = title;
+        this.date = date;
+        this.distance = distance;
+        this.fromharbor = fromharbor;
+        this.toharbor = toharbor;
     }
 }
