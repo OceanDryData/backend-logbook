@@ -26,6 +26,8 @@ public class Log extends ResourceSupport implements Serializable {
     private String fromharbor;
     @Getter
     private String toharbor;
+//    @Getter
+//    private Boat boat;
 
     public Log(){
     }
